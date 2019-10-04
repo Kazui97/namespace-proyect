@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 437484484}
-  ally: {fileID: 652340869}
+  Text: {fileID: 652340869}
 --- !u!81 &543614302
 AudioListener:
   m_ObjectHideFlags: 0

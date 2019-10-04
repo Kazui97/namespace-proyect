@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace NPC
+namespace NPC               // creacion de los namespace
 {
     namespace enemy
     {
@@ -13,23 +13,23 @@ namespace NPC
 
         public class ZombieOp : MonoBehaviour
         {      
-            public CosasZombie datosZombi;
-            int cambimov;
+            public CosasZombie datosZombi;          // variable de la estructura delos zombies
+            int cambimov; // variable para el cambio de movimiento
             void Awake()
             {
-                datosZombi.colorEs = (CosasZombie.ColorZombie)Random.Range(0, 3);
-                int dargusto = Random.Range(0, 5);
-                datosZombi.sabroso = (CosasZombie.Gustos)dargusto;
+                datosZombi.colorEs = (CosasZombie.ColorZombie)Random.Range(0, 3); // random para los colores de los zombies
+                int dargusto = Random.Range(0, 5);  //random para el gusto
+                datosZombi.sabroso = (CosasZombie.Gustos)dargusto; //asignacion del random de los zombie
             }
             void Start()
             {
                 
-             datosZombi.condicion = (CosasZombie.Estados)0;
-             StartCoroutine ("Cambioestado");
+             datosZombi.condicion = (CosasZombie.Estados)0;     // inicio de la corutina
+             StartCoroutine ("Cambioestado");   //iniciando lacorutina
             }
 
 
-            void Update()
+            void Update()       //cambio de los estado de los zombies
             {       
                 switch(datosZombi.condicion)
                 {
@@ -64,7 +64,7 @@ namespace NPC
                 break;
                 }
             }
-            IEnumerator Cambioestado()
+            IEnumerator Cambioestado()  // la corutina cambiara el estado del zombi cada 3 sg
             {
                 while (true)
                 {
@@ -99,7 +99,7 @@ namespace NPC
             }
         }
 
-        public struct CosasZombie
+        public struct CosasZombie       // estructura que contiene los enum de los zombies
         {
             public enum Gustos 
             {
@@ -130,7 +130,7 @@ namespace NPC
 
     }
 
-    namespace Ally
+    namespace Ally      // el namespace de los aldeanos
     {
         using System.Collections;
         using System.Collections.Generic;
@@ -138,16 +138,16 @@ namespace NPC
 
         public class CiudadanoOp : MonoBehaviour
         {
-            public CosasCiudadanos datoCiudadanos;
+            public CosasCiudadanos datoCiudadanos;  //variable de la estructura de los ciudadnos
 
             void Awake()
             {
 
 
-                int darnombre = Random.Range(0, 20);
-                datoCiudadanos.genteNombres = (CosasCiudadanos.Nombres)darnombre;
-                int daredad = Random.Range(15, 100);
-                datoCiudadanos.edadgente = (CosasCiudadanos.Edad)daredad;
+                int darnombre = Random.Range(0, 20);    ////random de los nombres de los ciudadanos
+                datoCiudadanos.genteNombres = (CosasCiudadanos.Nombres)darnombre;   ///variable que guarda el random de los nombre
+                int daredad = Random.Range(15, 100);//random de las edades
+                datoCiudadanos.edadgente = (CosasCiudadanos.Edad)daredad;//variables que guarda el random de las edades
 
             }
 
@@ -158,7 +158,7 @@ namespace NPC
             }
         }
 
-        public struct CosasCiudadanos
+        public struct CosasCiudadanos           //estructura de los aldeanos que guarda los enum
         {
             public enum Nombres
             {
